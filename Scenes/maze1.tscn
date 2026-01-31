@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c70yfex7r6llp"]
+
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="2_1hevu"]
+[ext_resource type="Texture2D" uid="uid://b410yac0qo7cq" path="res://icon.svg" id="2_tvpk7"]
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="3_1hevu"]
+
+[node name="Node2D" type="Node2D" unique_id=637732119]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=934689012]
+position = Vector2(1041, 237)
+scale = Vector2(0.546875, 2.453125)
+texture = ExtResource("2_tvpk7")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1684902754]
+position = Vector2(950, 372)
+scale = Vector2(0.546875, 2.453125)
+texture = ExtResource("2_tvpk7")
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("2_1hevu")]
+position = Vector2(3.0000305, 0)
+scale = Vector2(24.823679, 89.00134)
+player_start_point = NodePath("../player_start_pos")
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("3_1hevu")]
+position = Vector2(408, 305)

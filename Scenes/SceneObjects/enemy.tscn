@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://q6yq2gl20eri"]
+
+[ext_resource type="Texture2D" uid="uid://darfcbekkth2x" path="res://Assets/Sprites/enemy.png" id="1_kdc8y"]
+[ext_resource type="Script" uid="uid://bn4la566qrt3o" path="res://Scripts/enemy/enemy.gd" id="1_pakha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakha"]
+size = Vector2(33, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqf57"]
+size = Vector2(36, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn303"]
+size = Vector2(194, 182)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=172961995 groups=["enemy"]]
+script = ExtResource("1_pakha")
+float_speed = 10.0
+chase_speed = 50.0
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1931974419 groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=318963187]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_pakha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=7927324]
+z_index = 9
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("1_kdc8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=976621038]
+shape = SubResource("RectangleShape2D_lqf57")
+
+[node name="follow_area" type="Area2D" parent="." unique_id=2036263993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="follow_area" unique_id=257789958]
+shape = SubResource("RectangleShape2D_tn303")
+
+[connection signal="body_entered" from="follow_area" to="." method="_on_follow_area_body_entered"]
+[connection signal="body_exited" from="follow_area" to="." method="_on_follow_area_body_exited"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://vt2fi3x1qf82"]
+
+[ext_resource type="Script" uid="uid://dk1sowi6q2pes" path="res://Scripts/Misc/scene_switcher.gd" id="1_cfkxf"]
+[ext_resource type="Texture2D" uid="uid://by3prpaxkw16v" path="res://Assets/Sprites/scene_switcher.png" id="1_dudwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfkxf"]
+
+[node name="SceneSwitcher" type="Area2D" unique_id=1437716137 groups=["scene_switches"]]
+scale = Vector2(3.279999, 3.3999996)
+script = ExtResource("1_cfkxf")
+target_scene = "maze1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263044873]
+shape = SubResource("RectangleShape2D_cfkxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=410728038]
+texture = ExtResource("1_dudwf")

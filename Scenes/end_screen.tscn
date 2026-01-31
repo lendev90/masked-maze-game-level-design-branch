@@ -21,7 +21,6 @@ gradient = SubResource("Gradient_gdxnu")
 [node name="EndPoint" type="Node2D" unique_id=1705877815]
 script = ExtResource("1_f2mtv")
 main_menu_scene = ExtResource("2_1gwaw")
-fade_transition_scene = ExtResource("3_bhpww")
 
 [node name="Label" type="Label" parent="." unique_id=1786653036]
 offset_left = 291.0
@@ -47,12 +46,13 @@ offset_bottom = 529.0
 text = "Menu"
 
 [node name="FadeTransition" parent="." unique_id=544768403 instance=ExtResource("3_bhpww")]
-anchors_preset = 15
-offset_left = 610.0
-offset_top = 317.0
-offset_right = 610.0
-offset_bottom = 317.0
-grow_horizontal = 2
-grow_vertical = 2
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 640.0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

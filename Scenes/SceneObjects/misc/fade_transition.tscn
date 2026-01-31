@@ -19,7 +19,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2v0as"]
 resource_name = "fade_in"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,11 +56,12 @@ _data = {
 
 [node name="FadeTransition" type="ColorRect" unique_id=544768403]
 z_index = 100
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -2.0
 offset_bottom = -2.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_2v0as")
 

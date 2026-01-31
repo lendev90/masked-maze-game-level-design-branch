@@ -6,13 +6,9 @@ extends ColorRect
 
 func _ready() -> void:
 	if opening:
-		play_fade(true)
+		show()
+		play_fade("fade_out")
 
-func play_fade(open: bool):
-	print("Playing fade: ", open)
-	print("Animation Player: ", animation_player)
-	if open:
-		animation_player.play("fade_out")
-	else:
-		animation_player.play("fade_in")
+func play_fade(fade_state: String):
+	animation_player.play(fade_state)
 	

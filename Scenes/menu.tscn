@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqgfw7ur07dty" path="res://Scripts/UI/menu_manager.gd" id="1_xhh6f"]
 [ext_resource type="PackedScene" uid="uid://b2ugojvmp6p1k" path="res://Scenes/start_point.tscn" id="2_cayip"]
 [ext_resource type="Texture2D" uid="uid://ccgbehspva1e2" path="res://Assets/Tilesets/mask.png" id="3_cayip"]
+[ext_resource type="PackedScene" uid="uid://2er5f1auqq8l" path="res://Scenes/SceneObjects/misc/fade_transition.tscn" id="4_158mb"]
 
 [sub_resource type="Gradient" id="Gradient_xhh6f"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -85,5 +86,15 @@ scale = Vector2(15, 15)
 texture = ExtResource("3_cayip")
 vframes = 2
 frame = 1
+
+[node name="FadeTransition" parent="." unique_id=544768403 instance=ExtResource("4_158mb")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 638.0
 
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

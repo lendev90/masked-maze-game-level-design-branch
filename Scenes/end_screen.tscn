@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cn422waa7kcxd"]
+
+[ext_resource type="Script" uid="uid://c0dsgelc3nj0m" path="res://Scripts/UI/end_screen.gd" id="1_f2mtv"]
+[ext_resource type="PackedScene" uid="uid://6bp1tjbvfyr3" path="res://Scenes/menu.tscn" id="2_1gwaw"]
+[ext_resource type="PackedScene" uid="uid://2er5f1auqq8l" path="res://Scenes/SceneObjects/misc/fade_transition.tscn" id="3_bhpww"]
+
+[sub_resource type="SystemFont" id="SystemFont_1gwaw"]
+font_names = PackedStringArray("Verdana")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhpww"]
+font = SubResource("SystemFont_1gwaw")
+font_size = 64
+font_color = Color(0.10524041, 0.10524041, 0.1052404, 1)
+
+[sub_resource type="Gradient" id="Gradient_gdxnu"]
+colors = PackedColorArray(0.42352942, 0, 0, 1, 0.42352942, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8yanq"]
+gradient = SubResource("Gradient_gdxnu")
+
+[node name="EndPoint" type="Node2D" unique_id=1705877815]
+script = ExtResource("1_f2mtv")
+main_menu_scene = ExtResource("2_1gwaw")
+fade_transition_scene = ExtResource("3_bhpww")
+
+[node name="Label" type="Label" parent="." unique_id=1786653036]
+offset_left = 291.0
+offset_top = 531.0
+offset_right = 1127.0
+offset_bottom = 619.0
+text = "You Escaped"
+label_settings = SubResource("LabelSettings_bhpww")
+horizontal_alignment = 2
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1376062534]
+z_index = -10
+offset_right = 1149.0
+offset_bottom = 640.0
+texture = SubResource("GradientTexture1D_8yanq")
+
+[node name="Button" type="Button" parent="." unique_id=1452152706]
+offset_left = 1036.0
+offset_top = 498.0
+offset_right = 1116.0
+offset_bottom = 529.0
+text = "Menu"
+
+[node name="FadeTransition" parent="." unique_id=544768403 instance=ExtResource("3_bhpww")]
+anchors_preset = 15
+offset_left = 610.0
+offset_top = 317.0
+offset_right = 610.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

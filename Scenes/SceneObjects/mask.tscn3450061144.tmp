@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://buxye3w76g1tl"]
+
+[ext_resource type="Texture2D" uid="uid://ccgbehspva1e2" path="res://Assets/Tilesets/mask.png" id="1_bc6b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0qmb"]
+atlas = ExtResource("1_bc6b2")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oilhy"]
+atlas = ExtResource("1_bc6b2")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rsgv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0qmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oilhy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yek2"]
+
+[node name="Mask" type="AnimatedSprite2D" unique_id=990926117]
+sprite_frames = SubResource("SpriteFrames_1rsgv")
+frame_progress = 0.21169023
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=202016526]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1989444249]
+shape = SubResource("RectangleShape2D_8yek2")

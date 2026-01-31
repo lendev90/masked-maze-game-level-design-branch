@@ -15,6 +15,14 @@ run/main_scene="uid://cbxotm82hhykx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVariables="*uid://dwg2yho1yxuby"
+
+[dotnet]
+
+project/assembly_name="maze-mask-game"
+
 [global_group]
 
 scene_switches="The group of the object that switch scenes"

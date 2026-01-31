@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://buxye3w76g1tl" path="res://Scenes/SceneObjects/mask.tscn" id="4_fmdcm"]
 [ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="4_stupb"]
 [ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="5_14ff2"]
+[ext_resource type="PackedScene" uid="uid://uk1lhn7fhop4" path="res://Scenes/SceneObjects/mask_ui.tscn" id="7_cixau"]
 
 [node name="Maze1" type="Node2D" unique_id=1347579094]
 
@@ -49,3 +50,7 @@ target_scene = "start_point"
 [node name="SceneSwitcher2" parent="." unique_id=144719574 instance=ExtResource("5_14ff2")]
 position = Vector2(575, -21.999939)
 target_scene = "maze2"
+
+[node name="MaskUi" parent="." unique_id=2139309357 instance=ExtResource("7_cixau")]
+visible = false
+position = Vector2(984, 555)

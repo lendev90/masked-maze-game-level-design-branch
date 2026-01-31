@@ -198,6 +198,7 @@ sources/0 = SubResource("TileSetAtlasSource_5v5eg")
 texture = ExtResource("1_s5wg1")
 0:0/0 = 0
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.1360455, -5.484251, 5.8324585, -5.8324585, 6.0065613, 5.1360455, -4.78784, 5.8324585, -5.1360455, 5.6583557)
 

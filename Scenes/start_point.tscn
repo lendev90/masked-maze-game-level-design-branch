@@ -17,8 +17,14 @@ position = Vector2(631, 538)
 player_start_point = NodePath("../player_start_pos")
 player_will_fall = true
 
-[node name="CamSwitcher" parent="." unique_id=1864521440 instance=ExtResource("4_pl57d")]
-position = Vector2(628, 398)
+[node name="CamSwitcher" parent="." unique_id=1864521440 node_paths=PackedStringArray("curr_cam") instance=ExtResource("4_pl57d")]
+position = Vector2(631, 25)
+curr_cam = NodePath("../Camera2D")
+
+[node name="CamSwitcher2" parent="." unique_id=1074052495 node_paths=PackedStringArray("curr_cam") instance=ExtResource("4_pl57d")]
+position = Vector2(634, -88)
+curr_cam = NodePath("../Camera2D")
+move_dir = "down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=774244368]
 position = Vector2(629, 326)

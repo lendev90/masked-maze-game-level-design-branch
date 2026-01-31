@@ -15,13 +15,14 @@ player_start_point = NodePath("../player_start_pos")
 
 [node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("2_aj21c")]
 z_index = 7
-position = Vector2(978, 216)
-target_scene = "maze1"
+position = Vector2(253.00006, 330)
+target_scene = "start_point"
 
 [node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_y2iam")]
 position = Vector2(40, 333)
 
 [node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("4_8snm6")]
+visible = false
 position = Vector2(311, 230)
 
 [node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("5_qanv1")]

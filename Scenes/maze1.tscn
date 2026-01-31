@@ -1,25 +1,32 @@
 [gd_scene format=3 uid="uid://c70yfex7r6llp"]
 
+[ext_resource type="PackedScene" uid="uid://dt416mu45lmqa" path="res://Scenes/SceneObjects/mazes/tilemap_maze1.tscn" id="1_1hevu"]
 [ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="2_1hevu"]
-[ext_resource type="Texture2D" uid="uid://b410yac0qo7cq" path="res://icon.svg" id="2_tvpk7"]
 [ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="3_1hevu"]
+[ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="4_stupb"]
+[ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="5_14ff2"]
 
-[node name="Node2D" type="Node2D" unique_id=637732119]
+[node name="Maze1" type="Node2D" unique_id=1347579094]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=934689012]
-position = Vector2(1041, 237)
-scale = Vector2(0.546875, 2.453125)
-texture = ExtResource("2_tvpk7")
-
-[node name="Icon2" type="Sprite2D" parent="." unique_id=1684902754]
-position = Vector2(950, 372)
-scale = Vector2(0.546875, 2.453125)
-texture = ExtResource("2_tvpk7")
-
-[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("2_1hevu")]
-position = Vector2(3.0000305, 0)
-scale = Vector2(24.823679, 89.00134)
-player_start_point = NodePath("../player_start_pos")
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_1hevu")]
+position = Vector2(2, -2)
 
 [node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("3_1hevu")]
-position = Vector2(408, 305)
+position = Vector2(56, 165)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("2_1hevu")]
+position = Vector2(1, -10)
+player_start_point = NodePath("../player_start_pos")
+
+[node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("4_stupb")]
+position = Vector2(539, 101)
+
+[node name="Enemy2" parent="." unique_id=2075137538 instance=ExtResource("4_stupb")]
+position = Vector2(612, 462)
+
+[node name="Enemy3" parent="." unique_id=1429412326 instance=ExtResource("4_stupb")]
+position = Vector2(838, 228)
+
+[node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("5_14ff2")]
+position = Vector2(749, 586)
+target_scene = "start_point"

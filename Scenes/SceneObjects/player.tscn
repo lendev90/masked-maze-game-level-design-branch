@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cjho5mmnbkkfi" path="res://Assets/Sprites/shadow.png" id="4_exjtf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exjtf"]
-size = Vector2(32, 21)
+size = Vector2(23, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi46m"]
-size = Vector2(32, 21)
+size = Vector2(23, 21)
 
 [sub_resource type="Animation" id="Animation_yi46m"]
 length = 0.001
@@ -200,7 +200,7 @@ script = ExtResource("1_yi46m")
 footstep_interval = 0.5
 
 [node name="PhysicalBody" type="CollisionShape2D" parent="." unique_id=955097948]
-position = Vector2(0, 15.5)
+position = Vector2(0.5, 15.5)
 shape = SubResource("RectangleShape2D_exjtf")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1832301852]
@@ -221,7 +221,7 @@ vframes = 6
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=319609649]
-position = Vector2(0, 15.5)
+position = Vector2(0.5, 15.5)
 shape = SubResource("RectangleShape2D_yi46m")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=82038]

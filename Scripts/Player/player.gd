@@ -61,9 +61,11 @@ func find_nodes():
 		mask_path.visible = is_masked
 	else:
 		mask_path = get_tree().get_first_node_in_group("mask_path")
+		mask_path.visible = is_masked
 	
 	if normal_path == null:
 		normal_path = get_tree().get_first_node_in_group("normal_path")
+		normal_path.visible = not is_masked
 		
 	if mask_node == null:
 		mask_node = get_tree().get_first_node_in_group("mask")
@@ -80,6 +82,8 @@ func _process(delta: float) -> void:
 		handle_mask()
 
 func _physics_process(delta: float) -> void:
+	if not can_start:
+		return
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
 	if(direction != Vector2.ZERO):

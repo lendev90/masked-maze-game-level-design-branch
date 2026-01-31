@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c22x8y3jncui6"]
+
+[ext_resource type="PackedScene" uid="uid://k8271pyo10bd" path="res://Scenes/SceneObjects/mazes/tilemap_maze2.tscn" id="1_6ufin"]
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_nd8wu"]
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_i38ro"]
+[ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="5_oq6h7"]
+[ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="6_8ur48"]
+
+[node name="Maze1" type="Node2D" unique_id=1347579094]
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_6ufin")]
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_nd8wu")]
+position = Vector2(11, 170)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_i38ro")]
+position = Vector2(1, -10)
+player_start_point = NodePath("../player_start_pos")
+
+[node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("5_oq6h7")]
+position = Vector2(409, 168)
+
+[node name="Enemy2" parent="." unique_id=2075137538 instance=ExtResource("5_oq6h7")]
+position = Vector2(733, 464)
+
+[node name="Enemy3" parent="." unique_id=1429412326 instance=ExtResource("5_oq6h7")]
+position = Vector2(747, 172)
+
+[node name="Enemy4" parent="." unique_id=673829033 instance=ExtResource("5_oq6h7")]
+position = Vector2(404, 315)
+
+[node name="Enemy5" parent="." unique_id=727602494 instance=ExtResource("5_oq6h7")]
+position = Vector2(728, 314)
+
+[node name="Enemy6" parent="." unique_id=274304804 instance=ExtResource("5_oq6h7")]
+position = Vector2(395, 454)
+
+[node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("6_8ur48")]
+position = Vector2(575, 639)
+target_scene = "start_point"
+
+[node name="SceneSwitcher2" parent="." unique_id=144719574 instance=ExtResource("6_8ur48")]
+position = Vector2(575, -21.999939)
+target_scene = "tilemap_maze2"

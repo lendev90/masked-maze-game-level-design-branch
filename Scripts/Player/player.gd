@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # states
-@export var is_masked := true
+@export var is_masked := false
 @export var can_start := false
 @export var will_fall := false
 
@@ -39,6 +39,8 @@ var direction := Vector2.ZERO
 
 
 func _ready() -> void:
+	if GlobalVariables.mask_catched == true:
+		is_masked = true
 	if(will_fall):
 		fall()
 	else:
@@ -73,11 +75,11 @@ func find_nodes():
 func _process(delta: float) -> void:
 	handle_animation()
 
-	if Input.is_action_just_pressed("mask"):
+	if Input.is_action_just_pressed("mask") and GlobalVariables.mask_catched == true:
 		is_masked = false
 		handle_mask()
 
-	if Input.is_action_just_released("mask"):
+	if Input.is_action_just_released("mask") and GlobalVariables.mask_catched == true:
 		is_masked = true
 		handle_mask()
 

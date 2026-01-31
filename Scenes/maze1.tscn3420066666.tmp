@@ -19,10 +19,7 @@ position = Vector2(576, 565)
 position = Vector2(1, -10)
 player_start_point = NodePath("../player_start_pos")
 
-[node name="Mask" parent="." unique_id=2084079005 instance=ExtResource("4_fmdcm")]
-z_index = 9
-position = Vector2(578, 319)
-scale = Vector2(1.7199951, 1.8000025)
+[node name="Mask" parent="." unique_id=990926117 instance=ExtResource("4_fmdcm")]
 
 [node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("4_stupb")]
 position = Vector2(409, 168)
@@ -40,7 +37,7 @@ position = Vector2(404, 315)
 position = Vector2(728, 314)
 
 [node name="Enemy6" parent="." unique_id=274304804 instance=ExtResource("4_stupb")]
-position = Vector2(395, 454)
+position = Vector2(394, 452)
 
 [node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("5_14ff2")]
 position = Vector2(575, 639)
@@ -48,4 +45,4 @@ target_scene = "start_point"
 
 [node name="SceneSwitcher2" parent="." unique_id=144719574 instance=ExtResource("5_14ff2")]
 position = Vector2(575, -21.999939)
-target_scene = "maze2"
+target_scene = "tilemap_maze2"

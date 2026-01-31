@@ -21,6 +21,7 @@ player=""
 enemy=""
 mask_path=""
 normal_path=""
+mask=""
 
 [input]
 
@@ -37,3 +38,4 @@ mask={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.25565726, 0.25565943, 0.25565884, 1)

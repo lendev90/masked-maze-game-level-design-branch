@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1vv4iyjab4je"]
+
+[ext_resource type="Script" uid="uid://bbqchd8nhm84k" path="res://Scripts/Misc/cam_switcher.gd" id="1_546b8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijte3"]
+
+[node name="CamSwitcher" type="Area2D" unique_id=1864521440]
+script = ExtResource("1_546b8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=286693630]
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_ijte3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

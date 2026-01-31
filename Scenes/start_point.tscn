@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b2ugojvmp6p1k"]
+
+[ext_resource type="PackedScene" uid="uid://cxgven4c1o277" path="res://Scenes/SceneObjects/tilemap_start_point.tscn" id="1_l4tn5"]
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_pl57d"]
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_rh40a"]
+[ext_resource type="PackedScene" uid="uid://1vv4iyjab4je" path="res://Scenes/SceneObjects/cam_switcher.tscn" id="4_pl57d"]
+
+[node name="StartPoint" type="Node2D" unique_id=1401239585]
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_l4tn5")]
+position = Vector2(54, 5)
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_pl57d")]
+position = Vector2(631, 538)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_rh40a")]
+player_start_point = NodePath("../player_start_pos")
+player_will_fall = true
+
+[node name="CamSwitcher" parent="." unique_id=1864521440 instance=ExtResource("4_pl57d")]
+position = Vector2(628, 398)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=774244368]
+position = Vector2(629, 326)

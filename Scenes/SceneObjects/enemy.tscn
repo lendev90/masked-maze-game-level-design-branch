@@ -1,13 +1,64 @@
 [gd_scene format=3 uid="uid://q6yq2gl20eri"]
 
-[ext_resource type="Texture2D" uid="uid://darfcbekkth2x" path="res://Assets/Sprites/enemy.png" id="1_kdc8y"]
 [ext_resource type="Script" uid="uid://bn4la566qrt3o" path="res://Scripts/enemy/enemy.gd" id="1_pakha"]
+[ext_resource type="Texture2D" uid="uid://bs5ddy8135o7f" path="res://Assets/Tilesets/enemies.png" id="2_pakha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pakha"]
 size = Vector2(33, 33)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqf57"]
-size = Vector2(36, 34)
+[sub_resource type="Animation" id="Animation_lqf57"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pakha"]
+resource_name = "hidded"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_tn303"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nbfwu"]
+_data = {
+&"RESET": SubResource("Animation_lqf57"),
+&"hidded": SubResource("Animation_pakha"),
+&"idle": SubResource("Animation_tn303")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tn303"]
 size = Vector2(194, 182)
@@ -15,7 +66,7 @@ size = Vector2(194, 182)
 [node name="Enemy" type="CharacterBody2D" unique_id=172961995 groups=["enemy"]]
 script = ExtResource("1_pakha")
 float_speed = 10.0
-chase_speed = 50.0
+chase_speed = 75.0
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1931974419 groups=["enemy"]]
 
@@ -25,15 +76,18 @@ shape = SubResource("RectangleShape2D_pakha")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=7927324]
 z_index = 9
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("1_kdc8y")
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_pakha")
+hframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=976621038]
-shape = SubResource("RectangleShape2D_lqf57")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=931675916]
+libraries/ = SubResource("AnimationLibrary_nbfwu")
 
 [node name="follow_area" type="Area2D" parent="." unique_id=2036263993]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="follow_area" unique_id=257789958]
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_tn303")
 
 [connection signal="body_entered" from="follow_area" to="." method="_on_follow_area_body_entered"]

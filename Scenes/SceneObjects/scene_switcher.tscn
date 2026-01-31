@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfkxf"]
 
 [node name="SceneSwitcher" type="Area2D" unique_id=1437716137 groups=["scene_switches"]]
+z_index = 8
 scale = Vector2(3.279999, 3.3999996)
 script = ExtResource("1_cfkxf")
 target_scene = "maze1.tscn"
@@ -14,4 +15,5 @@ target_scene = "maze1.tscn"
 shape = SubResource("RectangleShape2D_cfkxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=410728038]
+z_index = 8
 texture = ExtResource("1_dudwf")

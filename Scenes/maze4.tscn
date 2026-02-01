@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dfwwmgrwnrnon"]
+
+[ext_resource type="PackedScene" uid="uid://b6grs76d7undu" path="res://Scenes/SceneObjects/mazes/tilemap_maze4.tscn" id="1_aqk4c"]
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_vnx6e"]
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_e3bdi"]
+[ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="4_fw45d"]
+[ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="5_m4jjl"]
+[ext_resource type="PackedScene" uid="uid://uk1lhn7fhop4" path="res://Scenes/SceneObjects/mask_ui.tscn" id="6_4way2"]
+[ext_resource type="Script" uid="uid://bnp1fvcori7cs" path="res://Scenes/SceneObjects/scene_switcher_end.gd" id="6_vnx6e"]
+
+[node name="Maze4" type="Node2D" unique_id=1347579094]
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_aqk4c")]
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_vnx6e")]
+position = Vector2(1082, 115)
+
+[node name="player_start_pos2" parent="." unique_id=767622300 instance=ExtResource("2_vnx6e")]
+position = Vector2(211, 320)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_e3bdi")]
+position = Vector2(1, -10)
+player_start_point = NodePath("../player_start_pos")
+
+[node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("4_fw45d")]
+position = Vector2(749, 98)
+
+[node name="Enemy2" parent="." unique_id=136872571 instance=ExtResource("4_fw45d")]
+position = Vector2(81, 71)
+
+[node name="Enemy3" parent="." unique_id=497016550 instance=ExtResource("4_fw45d")]
+position = Vector2(317, 393)
+
+[node name="Enemy4" parent="." unique_id=1382657448 instance=ExtResource("4_fw45d")]
+position = Vector2(360, 212)
+
+[node name="Enemy5" parent="." unique_id=912745825 instance=ExtResource("4_fw45d")]
+position = Vector2(843, 396)
+
+[node name="SceneSwitcher" parent="." unique_id=1437716137 node_paths=PackedStringArray("node") instance=ExtResource("5_m4jjl")]
+position = Vector2(1134.9999, 125.00003)
+target_scene = "maze2"
+node = NodePath("../player_start_pos")
+scene_switcher_from_to = Vector2(2, 4)
+
+[node name="SceneSwitcher2" parent="." unique_id=144719574 node_paths=PackedStringArray("node") instance=ExtResource("5_m4jjl")]
+position = Vector2(213.99998, 414.99997)
+script = ExtResource("6_vnx6e")
+target_scene = "end_screen"
+node = NodePath("../player_start_pos2")
+
+[node name="MaskUi" parent="." unique_id=2139309357 instance=ExtResource("6_4way2")]
+position = Vector2(984, 555)

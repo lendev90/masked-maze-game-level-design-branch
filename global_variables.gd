@@ -1,6 +1,7 @@
 extends Node
 
 @export var mask_catched = false
+@export var key_catched = false
 @export var cut1_played = false
 @export var cut2_played = false
 @export var player_start_pos: Vector2

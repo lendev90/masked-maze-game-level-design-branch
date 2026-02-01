@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhdmhow4c0hqx" path="res://Scenes/SceneObjects/mazes/tilemap_maze5.tscn" id="1_ycgwp"]
 [ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_fo8ps"]
 [ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_y01lq"]
+[ext_resource type="PackedScene" uid="uid://o77jrgcdnsn6" path="res://Scenes/SceneObjects/key.tscn" id="4_qgcej"]
 [ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="4_ycgwp"]
 [ext_resource type="PackedScene" uid="uid://uk1lhn7fhop4" path="res://Scenes/SceneObjects/mask_ui.tscn" id="5_qgcej"]
 [ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="5_wwdt5"]
@@ -12,11 +13,16 @@
 [node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_ycgwp")]
 
 [node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_fo8ps")]
-position = Vector2(118, 552)
+position = Vector2(116, 549)
 
 [node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_y01lq")]
 position = Vector2(1, -10)
 player_start_point = NodePath("../player_start_pos")
+
+[node name="Key" parent="." unique_id=2084079005 instance=ExtResource("4_qgcej")]
+z_index = 9
+position = Vector2(170.00002, 120.000015)
+scale = Vector2(3.2860754, 2.5340414)
 
 [node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("5_wwdt5")]
 position = Vector2(749, 98)

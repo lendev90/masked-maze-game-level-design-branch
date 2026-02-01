@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalVariables="*uid://dwg2yho1yxuby"
 Dialogic="*uid://ds2q0uclmolvu"
+Dialogue="*uid://cyuyp3sw6tm8v"
 
 [dialogic]
 
@@ -26,7 +27,9 @@ directories/dch_directory={
 "mask": "res://mask.dch"
 }
 directories/dtl_directory={
-"first_room_timeline": "res://first_room_timeline.dtl"
+"first_room_timeline": "res://first_room_timeline.dtl",
+"key_timeline": "res://key_timeline.dtl",
+"tutorial_timeline": "res://tutorial_timeline.dtl"
 }
 layout/style_directory={}
 extensions_folder="res://addons/dialogic_additions"

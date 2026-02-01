@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c70yfex7r6llp"]
 
 [ext_resource type="PackedScene" uid="uid://dt416mu45lmqa" path="res://Scenes/SceneObjects/mazes/tilemap_maze1.tscn" id="1_1hevu"]
-[ext_resource type="PackedScene" uid="uid://cyuyp3sw6tm8v" path="res://dialogue.tscn" id="1_mnrww"]
 [ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="2_1hevu"]
 [ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="3_1hevu"]
 [ext_resource type="PackedScene" uid="uid://buxye3w76g1tl" path="res://Scenes/SceneObjects/mask.tscn" id="4_fmdcm"]
@@ -10,10 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://uk1lhn7fhop4" path="res://Scenes/SceneObjects/mask_ui.tscn" id="7_cixau"]
 
 [node name="Maze1" type="Node2D" unique_id=1347579094]
-
-[node name="Dialogue" parent="." unique_id=758463341 instance=ExtResource("1_mnrww")]
-process_mode = 2
-timeline = "first_room_timeline"
 
 [node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_1hevu")]
 position = Vector2(2, -2)

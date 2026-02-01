@@ -1,11 +1,9 @@
 extends Node2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@onready var mask = get_tree().get_first_node_in_group("mask")
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GlobalVariables.mask_catched:
+	if GlobalVariables.key_catched:
 		queue_free()
 	else:
 		_animated_sprite.play("default")
@@ -18,9 +16,6 @@ func _process(delta: float) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		GlobalVariables.mask_catched = true
-		mask.visible = true
-		Dialogue.catch_mask()
-		body.is_masked = true
-		body.handle_mask()
+		GlobalVariables.key_catched = true
+		Dialogue.catch_key()
 		queue_free()

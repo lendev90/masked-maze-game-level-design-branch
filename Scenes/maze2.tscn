@@ -40,9 +40,9 @@ node = NodePath("../player_start_pos")
 scene_switcher_from_to = Vector2(1, 2)
 
 [node name="SceneSwitcher2" parent="." unique_id=144719574 instance=ExtResource("6_8ur48")]
-visible = true
-position = Vector2(-28.999939, 170.99998)
-target_scene = "tilemap_maze2"
+position = Vector2(13.999996, 171.00002)
+target_scene = "maze4"
+scene_switcher_from_to = Vector2(2, 4)
 
 [node name="SceneSwitcher3" parent="." unique_id=2054015579 node_paths=PackedStringArray("node") instance=ExtResource("6_8ur48")]
 position = Vector2(1195, 412)

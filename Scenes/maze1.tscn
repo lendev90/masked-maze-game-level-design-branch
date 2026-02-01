@@ -24,9 +24,12 @@ position = Vector2(576, 565)
 [node name="player_start_pos2" parent="." unique_id=2106711468 instance=ExtResource("3_1hevu")]
 position = Vector2(574, 58)
 
+[node name="player_start_pos3" parent="." unique_id=397417628 instance=ExtResource("3_1hevu")]
+position = Vector2(578, 322)
+
 [node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("2_1hevu")]
 position = Vector2(1, -10)
-player_start_point = NodePath("../player_start_pos")
+player_start_point = NodePath("../player_start_pos3")
 
 [node name="Mask" parent="." unique_id=2084079005 instance=ExtResource("4_fmdcm")]
 z_index = 9

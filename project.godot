@@ -48,9 +48,24 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/input_action="dialogic_default_action"
-text/autoadvance_enabled=true
+text/autoadvance_enabled=false
 text/autoadvance_per_word_delay=0
 text/autoadvance_fixed_delay=1.0
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
 
 [dotnet]
 
@@ -68,6 +83,7 @@ enemy=""
 mask_path=""
 normal_path=""
 mask=""
+dialogues=""
 
 [input]
 

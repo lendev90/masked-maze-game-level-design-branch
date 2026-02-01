@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://6bp1tjbvfyr3"]
+
+[ext_resource type="Script" uid="uid://bqgfw7ur07dty" path="res://Scripts/UI/menu_manager.gd" id="1_xhh6f"]
+[ext_resource type="PackedScene" uid="uid://b2ugojvmp6p1k" path="res://Scenes/start_point.tscn" id="2_cayip"]
+[ext_resource type="Texture2D" uid="uid://ccgbehspva1e2" path="res://Assets/Tilesets/mask.png" id="3_cayip"]
+[ext_resource type="PackedScene" uid="uid://2er5f1auqq8l" path="res://Scenes/SceneObjects/misc/fade_transition.tscn" id="4_158mb"]
+
+[sub_resource type="Gradient" id="Gradient_xhh6f"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cayip"]
+gradient = SubResource("Gradient_xhh6f")
+
+[sub_resource type="SystemFont" id="SystemFont_u4yt8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1rerr"]
+font = SubResource("SystemFont_u4yt8")
+font_size = 64
+font_color = Color(0.7607843, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_158mb"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wwsa2"]
+gradient = SubResource("Gradient_158mb")
+
+[sub_resource type="SystemFont" id="SystemFont_jsrd8"]
+font_names = PackedStringArray("Lucida Sans Unicode")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbdvm"]
+font = SubResource("SystemFont_jsrd8")
+font_size = 32
+
+[node name="Menu" type="Node2D" unique_id=747829146]
+script = ExtResource("1_xhh6f")
+first_maze_scene = ExtResource("2_cayip")
+
+[node name="VBoxContainer" type="FlowContainer" parent="." unique_id=1068212686]
+custom_minimum_size = Vector2(0, 64)
+layout_direction = 2
+offset_left = 40.0
+offset_right = 1188.0
+offset_bottom = 647.0
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 2
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=546747685]
+z_index = -10
+offset_right = 1148.0
+offset_bottom = 1148.0
+texture = SubResource("GradientTexture1D_cayip")
+expand_mode = 4
+
+[node name="TextEdit" type="Label" parent="." unique_id=774593499]
+offset_left = 40.0
+offset_top = 376.0
+offset_right = 314.0
+offset_bottom = 464.0
+text = "MaskAze"
+label_settings = SubResource("LabelSettings_1rerr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=480292886]
+offset_left = 40.0
+offset_top = 499.0
+offset_right = 296.0
+offset_bottom = 563.0
+texture_normal = SubResource("GradientTexture1D_wwsa2")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=1786399455]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 51.0
+text = "Jogar"
+label_settings = SubResource("LabelSettings_wbdvm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=2070743552]
+texture_filter = 1
+position = Vector2(876.00006, 222.00002)
+scale = Vector2(15, 15)
+texture = ExtResource("3_cayip")
+vframes = 2
+frame = 1
+
+[node name="FadeTransition" parent="." unique_id=544768403 instance=ExtResource("4_158mb")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 638.0
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

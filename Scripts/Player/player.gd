@@ -104,6 +104,9 @@ func _physics_process(delta: float) -> void:
 		if collider is TileMapLayer:
 			if collider.name == "deadly":
 				die()
+			if collider.name == "Spikes":
+				die()
+				
 	move_and_slide()
 
 

@@ -7,10 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://uk1lhn7fhop4" path="res://Scenes/SceneObjects/mask_ui.tscn" id="6_0wcxt"]
 [ext_resource type="PackedScene" uid="uid://1r4exfpv3x5s" path="res://Scenes/SceneObjects/mazes/tilemap_maze3.tscn" id="6_3gh0p"]
 
-[node name="Maze2" type="Node2D" unique_id=1347579094]
+[node name="Maze3" type="Node2D" unique_id=1347579094]
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("6_3gh0p")]
 
 [node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_1g2ed")]
-position = Vector2(94, 413)
+position = Vector2(91, 410)
 
 [node name="player_start_pos2" parent="." unique_id=767622300 instance=ExtResource("2_1g2ed")]
 position = Vector2(24, 89)
@@ -41,13 +43,10 @@ node = NodePath("../player_start_pos")
 scene_switcher_from_to = Vector2(2, 3)
 
 [node name="SceneSwitcher2" parent="." unique_id=144719574 node_paths=PackedStringArray("node") instance=ExtResource("5_yb6te")]
-visible = true
 position = Vector2(14.999996, 20.00003)
-target_scene = "tilemap_maze2"
+target_scene = "maze5"
 node = NodePath("../player_start_pos2")
 scene_switcher_from_to = Vector2(3, 5)
 
 [node name="MaskUi" parent="." unique_id=2139309357 instance=ExtResource("6_0wcxt")]
 position = Vector2(984, 555)
-
-[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("6_3gh0p")]

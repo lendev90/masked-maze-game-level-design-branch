@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://uk1lhn7fhop4"]
 
 [ext_resource type="Texture2D" uid="uid://ccgbehspva1e2" path="res://Assets/Tilesets/mask.png" id="1_2eggt"]
-[ext_resource type="Script" uid="uid://cdxuei3q621qj" path="res://Scripts/Player/mask_ui.gd" id="2_sp3aw"]
+[ext_resource type="Script" uid="uid://buwgir24rf5b8" path="res://Scripts/Player/mask_ui.gd" id="2_sp3aw"]
 
 [node name="MaskUi" type="Sprite2D" unique_id=2139309357 groups=["mask"]]
 z_index = 100

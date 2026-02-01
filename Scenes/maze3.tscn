@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://7ad72hvkkb62"]
+
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_1g2ed"]
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_eig71"]
+[ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="4_u8qtx"]
+[ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="5_yb6te"]
+[ext_resource type="PackedScene" uid="uid://uk1lhn7fhop4" path="res://Scenes/SceneObjects/mask_ui.tscn" id="6_0wcxt"]
+[ext_resource type="PackedScene" uid="uid://1r4exfpv3x5s" path="res://Scenes/SceneObjects/mazes/tilemap_maze3.tscn" id="6_3gh0p"]
+
+[node name="Maze2" type="Node2D" unique_id=1347579094]
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_1g2ed")]
+position = Vector2(94, 413)
+
+[node name="player_start_pos2" parent="." unique_id=767622300 instance=ExtResource("2_1g2ed")]
+position = Vector2(24, 89)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_eig71")]
+position = Vector2(1, -10)
+player_start_point = NodePath("../player_start_pos")
+
+[node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("4_u8qtx")]
+position = Vector2(749, 98)
+
+[node name="SceneSwitcher" parent="." unique_id=1437716137 node_paths=PackedStringArray("node") instance=ExtResource("5_yb6te")]
+position = Vector2(19.000004, 410)
+target_scene = "maze2"
+node = NodePath("../player_start_pos")
+scene_switcher_from_to = Vector2(2, 3)
+
+[node name="SceneSwitcher2" parent="." unique_id=144719574 node_paths=PackedStringArray("node") instance=ExtResource("5_yb6te")]
+visible = true
+position = Vector2(14.999996, 20.00003)
+target_scene = "tilemap_maze2"
+node = NodePath("../player_start_pos2")
+scene_switcher_from_to = Vector2(3, 5)
+
+[node name="MaskUi" parent="." unique_id=2139309357 instance=ExtResource("6_0wcxt")]
+position = Vector2(984, 555)
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("6_3gh0p")]

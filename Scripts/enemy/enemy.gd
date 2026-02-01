@@ -33,8 +33,6 @@ func idle_float(delta: float) -> void:
 	velocity = Vector2.ZERO
 
 	var offset_y = sin(time*float_speed) * float_amplitude
-	print("time: ", time)
-	print("offset y: ", offset_y)
 	position.y = start_point.y + offset_y
 
 	move_and_slide()

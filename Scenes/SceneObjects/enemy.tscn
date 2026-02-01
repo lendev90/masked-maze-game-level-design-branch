@@ -87,6 +87,7 @@ libraries/ = SubResource("AnimationLibrary_nbfwu")
 [node name="follow_area" type="Area2D" parent="." unique_id=2036263993]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="follow_area" unique_id=257789958]
+visible = false
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_tn303")
 

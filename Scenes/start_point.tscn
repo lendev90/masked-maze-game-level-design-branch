@@ -10,13 +10,18 @@
 [node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_qy15o")]
 position = Vector2(-2, 1)
 
+[node name="player_start_pos2" parent="." unique_id=1085190157 instance=ExtResource("2_4frpa")]
+position = Vector2(571, 66)
+
 [node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_4frpa")]
-position = Vector2(631, 538)
+position = Vector2(572, 529)
 
 [node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_23wvs")]
 player_start_point = NodePath("../player_start_pos")
 player_will_fall = true
 
-[node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("4_xqafq")]
-position = Vector2(573, -1.999939)
+[node name="SceneSwitcher" parent="." unique_id=1437716137 node_paths=PackedStringArray("node") instance=ExtResource("4_xqafq")]
+position = Vector2(573, -2)
 target_scene = "maze1"
+node = NodePath("../player_start_pos2")
+scene_switcher_from_to = Vector2(0, 1)

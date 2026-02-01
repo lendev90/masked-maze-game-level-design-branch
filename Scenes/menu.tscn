@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://6bp1tjbvfyr3"]
 
 [ext_resource type="Script" uid="uid://bqgfw7ur07dty" path="res://Scripts/UI/menu_manager.gd" id="1_xhh6f"]
+[ext_resource type="PackedScene" uid="uid://blejksyjkhcvk" path="res://Scenes/cutscene1.tscn" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://ccgbehspva1e2" path="res://Assets/Tilesets/mask.png" id="3_cayip"]
 [ext_resource type="PackedScene" uid="uid://b2ugojvmp6p1k" path="res://Scenes/start_point.tscn" id="2_cayip"]
 [ext_resource type="Texture2D" uid="uid://bht8q4u5o0u27" path="res://Assets/Sprites/MenuScreen.png" id="3_wwsa2"]
 [ext_resource type="PackedScene" uid="uid://2er5f1auqq8l" path="res://Scenes/SceneObjects/misc/fade_transition.tscn" id="4_158mb"]
@@ -24,7 +26,7 @@ font_size = 40
 
 [node name="Menu" type="Node2D" unique_id=747829146]
 script = ExtResource("1_xhh6f")
-first_maze_scene = ExtResource("2_cayip")
+first_maze_scene = ExtResource("2_158mb")
 
 [node name="VBoxContainer" type="FlowContainer" parent="." unique_id=1068212686]
 custom_minimum_size = Vector2(0, 64)

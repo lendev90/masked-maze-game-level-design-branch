@@ -9,7 +9,7 @@
 size = Vector2(23, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi46m"]
-size = Vector2(23, 21)
+size = Vector2(23, 13)
 
 [sub_resource type="Animation" id="Animation_yi46m"]
 length = 0.001
@@ -221,7 +221,7 @@ vframes = 6
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=319609649]
-position = Vector2(0.5, 15.5)
+position = Vector2(0.5, 13.5)
 shape = SubResource("RectangleShape2D_yi46m")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=82038]

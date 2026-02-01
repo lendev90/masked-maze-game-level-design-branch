@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ojxbu5wcixal"]
+
+[ext_resource type="PackedScene" uid="uid://dt416mu45lmqa" path="res://Scenes/SceneObjects/mazes/tilemap_maze1.tscn" id="1_2430a"]
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_fo8ps"]
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_y01lq"]
+[ext_resource type="PackedScene" uid="uid://buxye3w76g1tl" path="res://Scenes/SceneObjects/mask.tscn" id="4_o7gwy"]
+[ext_resource type="PackedScene" uid="uid://q6yq2gl20eri" path="res://Scenes/SceneObjects/enemy.tscn" id="5_wwdt5"]
+
+[node name="Room3ThornsOfDespair" type="Node2D" unique_id=2038176597]
+position = Vector2(1, 1)
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_2430a")]
+position = Vector2(2, -2)
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_fo8ps")]
+position = Vector2(123, 553)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_y01lq")]
+position = Vector2(1, -17)
+player_start_point = NodePath("../player_start_pos")
+
+[node name="Mask" parent="." unique_id=2084079005 instance=ExtResource("4_o7gwy")]
+z_index = 9
+position = Vector2(167, 499)
+scale = Vector2(1.7199951, 1.8000025)
+
+[node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("5_wwdt5")]
+position = Vector2(308, 190)

@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="maze-mask-game"
-run/main_scene="uid://cbxotm82hhykx"
+run/main_scene="uid://ojxbu5wcixal"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalVariables="*uid://dwg2yho1yxuby"
+
+[display]
+
+window/size/initial_position_type=0
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 

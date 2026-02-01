@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bqgfw7ur07dty" path="res://Scripts/UI/menu_manager.gd" id="1_xhh6f"]
 [ext_resource type="PackedScene" uid="uid://b2ugojvmp6p1k" path="res://Scenes/start_point.tscn" id="2_cayip"]
-[ext_resource type="Texture2D" uid="uid://ccgbehspva1e2" path="res://Assets/Tilesets/mask.png" id="3_cayip"]
+[ext_resource type="Texture2D" uid="uid://bht8q4u5o0u27" path="res://Assets/Sprites/MenuScreen.png" id="3_wwsa2"]
 [ext_resource type="PackedScene" uid="uid://2er5f1auqq8l" path="res://Scenes/SceneObjects/misc/fade_transition.tscn" id="4_158mb"]
+[ext_resource type="FontFile" uid="uid://c1llnvu76kfb2" path="res://Fonts/TradeWinds-Regular.ttf" id="4_jsrd8"]
 
 [sub_resource type="Gradient" id="Gradient_xhh6f"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -11,25 +12,15 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cayip"]
 gradient = SubResource("Gradient_xhh6f")
 
-[sub_resource type="SystemFont" id="SystemFont_u4yt8"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_1rerr"]
-font = SubResource("SystemFont_u4yt8")
-font_size = 64
-font_color = Color(0.7607843, 0, 0, 1)
+font = ExtResource("4_jsrd8")
+font_size = 72
+font_color = Color(0.7294118, 0.15294118, 0.15294118, 1)
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Gradient" id="Gradient_158mb"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wwsa2"]
-gradient = SubResource("Gradient_158mb")
-
-[sub_resource type="SystemFont" id="SystemFont_jsrd8"]
-font_names = PackedStringArray("Lucida Sans Unicode")
-
 [sub_resource type="LabelSettings" id="LabelSettings_wbdvm"]
-font = SubResource("SystemFont_jsrd8")
-font_size = 32
+font = ExtResource("4_jsrd8")
+font_size = 40
 
 [node name="Menu" type="Node2D" unique_id=747829146]
 script = ExtResource("1_xhh6f")
@@ -46,6 +37,12 @@ alignment = 1
 last_wrap_alignment = 2
 vertical = true
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=262309335]
+texture_filter = 1
+offset_right = 1144.8889
+offset_bottom = 644.0
+texture = ExtResource("3_wwsa2")
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=546747685]
 z_index = -10
 offset_right = 1148.0
@@ -54,38 +51,29 @@ texture = SubResource("GradientTexture1D_cayip")
 expand_mode = 4
 
 [node name="TextEdit" type="Label" parent="." unique_id=774593499]
-offset_left = 40.0
-offset_top = 376.0
-offset_right = 314.0
-offset_bottom = 464.0
+offset_left = 403.0
+offset_top = 58.0
+offset_right = 743.0
+offset_bottom = 163.0
 text = "MaskAze"
 label_settings = SubResource("LabelSettings_1rerr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=480292886]
-offset_left = 40.0
-offset_top = 499.0
-offset_right = 296.0
-offset_bottom = 563.0
-texture_normal = SubResource("GradientTexture1D_wwsa2")
+offset_left = 445.0
+offset_top = 522.0
+offset_right = 701.0
+offset_bottom = 586.0
 
 [node name="Label" type="Label" parent="TextureButton" unique_id=1786399455]
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 51.0
-text = "Jogar"
+text = "Play"
 label_settings = SubResource("LabelSettings_wbdvm")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Mask" type="Sprite2D" parent="." unique_id=2070743552]
-texture_filter = 1
-position = Vector2(876.00006, 222.00002)
-scale = Vector2(15, 15)
-texture = ExtResource("3_cayip")
-vframes = 2
-frame = 1
 
 [node name="FadeTransition" parent="." unique_id=544768403 instance=ExtResource("4_158mb")]
 visible = false

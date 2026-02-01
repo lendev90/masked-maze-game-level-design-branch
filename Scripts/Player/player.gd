@@ -22,7 +22,8 @@ extends CharacterBody2D
 # Sounds
 @export var sounds := {
 	"walk": preload("res://Audio/footstep.mp3"),
-	"toggle_mask": preload("res://Audio/toggle_mask.wav")
+	"toggle_mask": preload("res://Audio/toggle_mask.wav"),
+	"die": preload("res://Audio/die.wav")
 }
 
 # Footstep
@@ -63,11 +64,11 @@ func find_nodes():
 		mask_path.visible = is_masked
 	else:
 		mask_path = get_tree().get_first_node_in_group("mask_path")
-		mask_path.visible = is_masked
+		# mask_path.visible = is_masked
 	
 	if normal_path == null:
 		normal_path = get_tree().get_first_node_in_group("normal_path")
-		normal_path.visible = not is_masked
+		# normal_path.visible = not is_masked
 		
 	if mask_node == null:
 		mask_node = get_tree().get_first_node_in_group("mask")
@@ -117,13 +118,12 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func monster_death() -> void:
 	if not is_masked:
-		visible = false
-		await get_tree().create_timer(death_cooldown).timeout
-		get_tree().reload_current_scene()
+		die()
 
 func die() -> void:
 	visible = false
 	await get_tree().create_timer(death_cooldown).timeout
+	play_sound("die")
 	get_tree().call_deferred("reload_current_scene")
 
 func handle_animation() -> void:

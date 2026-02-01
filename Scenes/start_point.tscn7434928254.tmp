@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b2ugojvmp6p1k"]
+
+[ext_resource type="PackedScene" uid="uid://cxgven4c1o277" path="res://Scenes/SceneObjects/mazes/tilemap_start_point.tscn" id="1_qy15o"]
+[ext_resource type="PackedScene" uid="uid://ggq85puvv2wm" path="res://Scenes/SceneObjects/player_start_pos.tscn" id="2_4frpa"]
+[ext_resource type="PackedScene" uid="uid://dc8o7oanjyb5i" path="res://Scenes/SceneObjects/game_manager.tscn" id="3_23wvs"]
+[ext_resource type="PackedScene" uid="uid://vt2fi3x1qf82" path="res://Scenes/SceneObjects/scene_switcher.tscn" id="4_xqafq"]
+
+[node name="StartPoint" type="Node2D" unique_id=1401239585]
+
+[node name="Tilemap" parent="." unique_id=301749834 instance=ExtResource("1_qy15o")]
+position = Vector2(-2, 1)
+
+[node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_4frpa")]
+position = Vector2(572, 529)
+
+[node name="player_start_pos2" parent="." unique_id=1085190157 instance=ExtResource("2_4frpa")]
+position = Vector2(1144, 1058)
+
+[node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("4_xqafq")]
+visible = true
+position = Vector2(573, -2)
+target_scene = "maze1"
+scene_switcher_mod = Vector2(0, 10)
+scene_switcher_from_to = Vector2(0, 1)
+
+[node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_23wvs")]
+player_start_point = NodePath("../player_start_pos")
+player_will_fall = true

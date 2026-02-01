@@ -8,7 +8,15 @@ extends Node2D
 @export var player_will_fall := false
 
 func _ready() -> void:
+	if GlobalVariables.switch_scene_from_to.x == -1:
+		GlobalVariables.player_start_pos = player_start_point.global_position
+	else:
+		var switchers = get_tree().get_nodes_in_group("scene_switches")
+		for switch in switchers:
+			if switch.scene_switcher_from_to == GlobalVariables.switch_scene_from_to:
+				GlobalVariables.player_start_pos = switch.node.global_position
 	create_player()
+	
 
 func _process(delta: float) -> void:
 	pass
@@ -16,8 +24,8 @@ func _process(delta: float) -> void:
 func create_player() -> void:
 	var pos = Vector2.ZERO
 
-	if(player_start_point != null):
-		pos = player_start_point.global_position
+	if(GlobalVariables.player_start_pos != null):
+		pos = GlobalVariables.player_start_pos
 
 	var player_scene = load(player_scene_path)
 

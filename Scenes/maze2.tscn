@@ -14,6 +14,12 @@
 [node name="player_start_pos" parent="." unique_id=881237528 instance=ExtResource("2_nd8wu")]
 position = Vector2(595, 578)
 
+[node name="player_start_pos2" parent="." unique_id=1697877813 instance=ExtResource("2_nd8wu")]
+position = Vector2(595, 578)
+
+[node name="player_start_pos3" parent="." unique_id=318125195 instance=ExtResource("2_nd8wu")]
+position = Vector2(1124, 412)
+
 [node name="game_manager" parent="." unique_id=1324089269 node_paths=PackedStringArray("player_start_point") instance=ExtResource("3_i38ro")]
 position = Vector2(1, -10)
 player_start_point = NodePath("../player_start_pos")
@@ -21,15 +27,22 @@ player_start_point = NodePath("../player_start_pos")
 [node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("5_oq6h7")]
 position = Vector2(749, 98)
 
-[node name="SceneSwitcher" parent="." unique_id=1437716137 instance=ExtResource("6_8ur48")]
-visible = true
+[node name="SceneSwitcher" parent="." unique_id=1437716137 node_paths=PackedStringArray("node") instance=ExtResource("6_8ur48")]
 position = Vector2(595, 642)
-target_scene = "maze_1"
+target_scene = "maze1"
+node = NodePath("../player_start_pos")
+scene_switcher_from_to = Vector2(1, 2)
 
 [node name="SceneSwitcher2" parent="." unique_id=144719574 instance=ExtResource("6_8ur48")]
 visible = true
-position = Vector2(575, -21.999939)
+position = Vector2(-28.999939, 170.99998)
 target_scene = "tilemap_maze2"
+
+[node name="SceneSwitcher3" parent="." unique_id=2054015579 node_paths=PackedStringArray("node") instance=ExtResource("6_8ur48")]
+position = Vector2(1195, 412)
+target_scene = "maze3"
+node = NodePath("../player_start_pos3")
+scene_switcher_from_to = Vector2(2, 3)
 
 [node name="MaskUi" parent="." unique_id=2139309357 instance=ExtResource("6_tx1ln")]
 position = Vector2(984, 555)

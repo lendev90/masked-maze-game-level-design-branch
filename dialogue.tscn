@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" uid="uid://caarg1577t368" path="res://dialogue.gd" id="1_kp46k"]
 
-[node name="Dialogue" type="Node2D" unique_id=758463341]
+[node name="Dialogue" type="Node2D" unique_id=758463341 groups=["dialogues"]]
 process_mode = 3
 script = ExtResource("1_kp46k")

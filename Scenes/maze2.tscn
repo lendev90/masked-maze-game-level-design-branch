@@ -27,6 +27,12 @@ player_start_point = NodePath("../player_start_pos")
 [node name="Enemy" parent="." unique_id=172961995 instance=ExtResource("5_oq6h7")]
 position = Vector2(749, 98)
 
+[node name="Enemy2" parent="." unique_id=1449910359 instance=ExtResource("5_oq6h7")]
+position = Vector2(301, 225)
+
+[node name="Enemy3" parent="." unique_id=1345241993 instance=ExtResource("5_oq6h7")]
+position = Vector2(1123, 468)
+
 [node name="SceneSwitcher" parent="." unique_id=1437716137 node_paths=PackedStringArray("node") instance=ExtResource("6_8ur48")]
 position = Vector2(595, 642)
 target_scene = "maze1"
